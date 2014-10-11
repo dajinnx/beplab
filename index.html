@@ -10,13 +10,21 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 		<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- Leave those next 4 lines if you care about users using IE8 -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+	    <!-- Leave those next 4 lines if you care about users using IE8 -->
+	    <!--[if lt IE 9]>
+	      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	    <![endif]-->
 
-    	<link rel="stylesheet" type="text/css" href="style.css">
+	    <link rel="stylesheet" type="text/css" href="style.css"> <!--Load your stylesheet AFTER Bootstrap to override it-->
+
+	    <!-- Begin MailChimp Signup Form -->
+	    <link href="http//cdn-images.mailchimp.com/embedcode/classic-081711.css" rel="stylesheet" type="text/css">
+			<style type="text/css">
+				#mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
+				/* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
+				   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+			</style>
 
 	</head>
 
@@ -26,19 +34,20 @@
 	    
 	    <header class="container-fluid" id="main-header">
 	    	<div class="row">
+	    		<img src="images/logo_coul.png" class="col-xs-2 col-md-2 container-fluid text-right" id="logo" alt="Logo BEPlab"/>
+	      			    		
+	    		<div class="col-xs-offset-2 col-xs-8 col-md-offset-2 col-md-10 center-block">
+	    			<h1 id="title"><span class="bep-title">BẾP</span><span class="yellow">[<span class="lab-title">lab</span>]</span> <span class="hidden-xs hidden-sm">Laboratoire de cuisine partagée</span></h1>
 	    		
-	    		<img src="images/logo_coul.png" alt="Logo BEPlab" id="logo"/>
-	    		
-		    	<div id="title">
-		    		<h1><span class="bep-title">BẾP</span><span class="yellow">[<span class="lab-title">lab</span>]</span> laboratoire de cuisine partagée</h1>
-		    	</div>
-
+		    		<!-- <h1 class="hidden-xs col-md-offset-2 col-md-8 left"  id="title"><span class="bep-title">BẾP</span><span class="yellow">[<span class="lab-title">lab</span>]</span> <span laboratoire de cuisine partagée</h1> -->
+		    	
 		    <!-- Liens Facebook, Twitter, BEPrestaurant... -->
-		    	<ul class="list-inline right">
+		    	<ul class="list-inline col-md-8 container-fluid right hidden-xs" id="rs">
 		    		<li><a href="https://www.facebook.com/BEPlab" target="_blank"><i class="fa fa-facebook"></i></a> </li>
 					<li><i class="fa fa-twitter"></i></li>
-		    		<li><a href="http://beprestaurant.blogspot.com/" target="_blank"><span class="bep-title">BẾP</span></a>BRKLYN</li>
+		    		<li><a href="http://beprestaurant.blogspot.com/" target="_blank"><span class="bold">BẾP</span></a>BRKLYN</li>
 		     	</ul>
+		     	</div>
 
 		    <!-- Menu de Navigation -->
 		    	<nav class="navbar navbar-default" role="navigation">
@@ -51,7 +60,6 @@
 					        <span class="icon-bar"></span>
 					        <span class="icon-bar"></span>
 					      </button>
-					      <a class="navbar-brand visible-xs" href="#">Accueil</a>
 					    </div><!-- You can see me on small devices -->
 
 						<!-- Collect the nav links, forms, and other content for toggling -->
@@ -60,6 +68,9 @@
 					        <li class="active"><a href="#materiel">Le Labo</a></li>
 					        <li><a href="#tarifs">Tarifs</a></li>
 					        <li><a href="#emplacement">Nous trouver</a></li>
+					        <li>
+					        	<!-- Link trigger modal -->
+								<a data-toggle="modal" data-target="#myModal">What the <span class="bold">BẾP</span>?</a></li>
 					      </ul>
 					    </div><!-- /.navbar-collapse -->
 					  </div><!-- /.container-fluid -->
@@ -70,6 +81,7 @@
 	    
 
 	    <section class="container-fluid" id="accueil">
+
 	     	<div class="container">	
 	    		<div class="jumbotron">
 	  				<h2>Vous aussi venez cuisiner dès maintenant dans les meilleures conditions!</h2>
@@ -83,9 +95,9 @@
 	    	<div class="container">
 	    		<div class="row">
 			    	<article class="col-md-4">
-			    		<img src="images/icon_930/icon_930.png"/>
+			    		<img src="images/icon_930/icon_930.png" class="img-rounded"/>
 						<h3><a href="#materiel">Equipement professionnel</a></h3>
-		    			</p>
+		    			<p class="lead">
 		    				Votre espace de travail et tout le matériel à disposition pour vous permettre de vous concentrer sur vos préparations.
 		    			</p>
 		    		</article>
@@ -93,14 +105,20 @@
 			    	<article class="col-md-4">
 			    		<i class="fa fa-ils center"></i>
 			    		<h3><a href="#tarifs">Location sur mesure</a></h3>
-			    		<p>Sans engagement, un abonnement au mois, un abonnement à l'année ou une location à la carte</p>
+			    		<p class="lead">
+			    			Sans engagement</br>
+			    			Abonnement à la semaine ou au mois</br>
+			    			Location à la carte (à la journée ou à l'heure) 
+			    		</p>
 					</article>
 			    		
 			    	<article class="col-md-4">
 			    		<i class="fa fa-location-arrow center"></i>
 			    		<i class="fa fa-map-marker"></i>
 			    		<h3><a href="#emplacement">Un emplacement idéal pour l'Ouest de Paris</a></h3>
-			    		<p>A Chaville (92) en banlieue ouest proche de Paris. Entre Boulogne-Billancourt, Issy-les-Moulineaux, Versailles et Vélizy</p>
+			    		<p class="lead">
+			    			A Chaville (92), entre Boulogne-Billancourt, Issy-les-Moulineaux, Versailles et Vélizy.
+			    		</p>
 			    	</article>
 			    </div>
 	    	</div>	
@@ -110,10 +128,10 @@
 	    <section id="materiel">
 	    	<div class="container">
 	    		<div class="row">
-			    	<h2>Le Lab: Equipement & Matériel disponible</h2>
-			    	<p><span class="italic red">BẾP</span> signifie "<span class="italic red">cuisine</span>" en vietnamien - la langue du staff de <span class="red">BẾP</span>[<span class="lab-title">lab</span>]. <a href="http://beprestaurant.blogspot.fr/" target="_blank"><span class="bep-title">BẾP</span></a> est aussi le nom du restaurant vietnamien du chef <span class="red">An Nguyễn Xuân</span> a Williamsburg, Brooklyn (New York).
+			    	<h2>Le Labo: Equipement & Matériel disponible</h2>
+			    	<p><span class="italic red">"Bếp"</span> signifie <span class="italic red">"cuisine"</span> en vietnamien - la langue du staff de <span class="bold">BẾP</span><span class="red">[<span class="lab-title">lab</span>]</span>. <a href="http://beprestaurant.blogspot.fr/" target="_blank"><span class="bep-title">BẾP</span></a> est aussi le nom du restaurant vietnamien du chef <span class="red">An Nguyễn Xuân</span> à Williamsburg, Brooklyn (New York).
 		    		</p>
-		    		<p><span class="red">BẾP</span>[<span class="lab-title">lab</span>] est le laboratoire de préparation, de création et d'expérimentation du chef <span class="red">An Nguyễn Xuân</span> de <a href="http://beprestaurant.blogspot.fr/" title="BEP restaurant @simplecafe" target="_blank"><span class="bep-title">BẾP</span></a>BRKLYN pour tous ses évènements culinaires à Paris.
+		    		<p><span class="bold">BẾP</span><span class="red">[<span class="lab-title">lab</span>]</span> est le laboratoire de préparation, de création et d'expérimentation du chef <span class="red">An Nguyễn Xuân</span> de <a href="http://beprestaurant.blogspot.fr/" title="BEP restaurant @simplecafe" target="_blank"><span class="bep-title">BẾP</span></a>BRKLYN pour tous ses évènements culinaires à Paris.
 		    		</p>
 
 			    	<ul>
@@ -171,8 +189,8 @@
 					    		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2627.414043493839!2d2.1879099999999965!3d48.81216099999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e67b86ed9214ed%3A0x21872d1a96f88b2d!2sChaville+-+Rive+Droite!5e0!3m2!1sfr!2sfr!4v1411834618945" frameborder="0" style="border:0"></iframe>
 					    	</div>	
 			    			<p>
-			    				Idéalement situé a <span class="bold red">Chaville (92)</span> en <span class="italic red">banlieue proche de Paris</span>,</br>
-			    				entre <span class="italic red">Boulogne-Billancourt, Issy-les-Moulineaux, Versailles, Vélizy</span> :
+			    				Idéalement situé à <span class="bold red">Chaville (92)</span> en <span class="red">banlieue proche ouest de Paris</span>,</br>
+			    				entre <span class="red">Boulogne-Billancourt, Issy-les-Moulineaux, Versailles, Vélizy</span> :
 			    			</p>
 			    			<ul>
 				    			<li><span class="bold red">2 minutes</span> de la <span class="bold red">Gare SNCF Chaville Rive-Droite</span></br>
@@ -182,14 +200,74 @@
 				    			<li><span class="bold red">10 minutes</span> de la <span class="bold red">Gare SNCF Chaville Rive-Gauche</span></br>
 				    			(Dir. Paris Montparnasse - Plaisir/Grignon)</li>
 			    			</ul>
-			    			<p>A BEP[lab] vous n'avez qu'a ouvrir la porte pour faire une marche en foret et aller voir les etangs de Corot de Ville d'Avray.</p>
+			    			<p>A <span class="bold">BẾP</span><span class="red">[<span class="lab-title">lab</span>]</span>, vous avez juste a ouvrir la porte pour faire une marche en foret et aller voir les etangs de Corot de Ville d'Avray.</p>
 			    		</div>
 
 			    		<article class="col-md-6" id="contact"> 
-			    			<h3>Contact</h3>
+			    		
+
+				    	<!-- Begin MailChimp Signup Form -->
+							<div id="mc_embed_signup">
+							<form action="http://facebook.us9.list-manage.com/subscribe/post?u=9c7e8c04cd465efdda2517d15&amp;id=df162c1dbf" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+							    <div id="mc_embed_signup_scroll">
+								<h2>Formulaire de visite du Labo</h2>
+							<div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
+							<div class="mc-field-group">
+								<label for="mce-EMAIL">Email Address  <span class="asterisk">*</span>
+							</label>
+								<input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+							</div>
+							<div class="mc-field-group">
+								<label for="mce-FNAME">Société  <span class="asterisk">*</span>
+							</label>
+								<input type="text" value="" name="FNAME" class="required" id="mce-FNAME">
+							</div>
+							<div class="mc-field-group">
+								<label for="mce-MMERGE5">First Name </label>
+								<input type="text" value="" name="MMERGE5" class="" id="mce-MMERGE5">
+							</div>
+							<div class="mc-field-group">
+								<label for="mce-LNAME">Last Name </label>
+								<input type="text" value="" name="LNAME" class="" id="mce-LNAME">
+							</div>
+							<div class="mc-field-group size1of2">
+								<label for="mce-MMERGE3">Phone Number </label>
+								<input type="text" name="MMERGE3" class="" value="" id="mce-MMERGE3">
+							</div>
+							<div class="mc-field-group">
+								<label for="mce-MMERGE7">Votre budget MAX  <span class="asterisk">*</span>
+							</label>
+								<input type="text" value="" name="MMERGE7" class="required" id="mce-MMERGE7">
+							</div>
+							<div class="mc-field-group input-group">
+							    <strong>Matériel indispensable souhaité ?  <span class="asterisk">*</span>
+							</strong>
+							    <ul><li><input type="radio" value="Bacs Gastro" name="MMERGE8" id="mce-MMERGE8-0"><label for="mce-MMERGE8-0">Bacs Gastro</label></li>
+							<li><input type="radio" value="Cellule de refroidissement" name="MMERGE8" id="mce-MMERGE8-1"><label for="mce-MMERGE8-1">Cellule de refroidissement</label></li>
+							<li><input type="radio" value="Autre (précisez dans le message)" name="MMERGE8" id="mce-MMERGE8-2"><label for="mce-MMERGE8-2">Autre (précisez dans le message)</label></li>
+							</ul>
+							</div>
+							<div class="mc-field-group">
+								<label for="mce-MMERGE4">Votre message / Vos questions ? </label>
+								<input type="text" value="" name="MMERGE4" class="" id="mce-MMERGE4">
+							</div>
+								<div id="mce-responses" class="clear">
+									<div class="response" id="mce-error-response" style="display:none"></div>
+									<div class="response" id="mce-success-response" style="display:none"></div>
+								</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+							    <div style="position: absolute; left: -5000px;"><input type="text" name="b_9c7e8c04cd465efdda2517d15_df162c1dbf" tabindex="-1" value=""></div>
+							    <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+							    </div>
+							</form>
+							</div>
+							<script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[5]='MMERGE5';ftypes[5]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='MMERGE3';ftypes[3]='phone';fnames[7]='MMERGE7';ftypes[7]='text';fnames[8]='MMERGE8';ftypes[8]='radio';fnames[4]='MMERGE4';ftypes[4]='text';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
+							<!--End mc_embed_signup-->
+
+
+						<!-- <h3>Contact</h3>
 			    			<p>Pour plus d'informations ou pour une visite, appeler Dai: m. 06 0178 0170.</p>
 
-						<!-- Formulaire -->
+			    			Formulaire 
 			    			<form role="form">
 							  <div class="form-group">
 							    <label for="exampleInputEmail1">Nom</label>
@@ -197,18 +275,23 @@
 							  </div>
 							  <div class="form-group">
 							    <label for="exampleInputEmail1">Prénom</label>
-							    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Entrez votre Prenom">
+							    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Entrez votre Prénom">
+							  </div>
+							  <div class="form-group">
+							    <label for="exampleInputEmail1">Société</label>
+							    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Nom de votre Société">
 							  </div>
 							  <div class="form-group">
 							    <label for="exampleInputEmail1">Téléphone</label>
-							    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Entrez votre numéro de téléphone">
+							    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Votre numéro de téléphone">
 							  </div>
 							  <div class="form-group">
 							    <label for="exampleInputEmail1">Email</label>
 							    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Entrez votre email">
 							  </div>
-							  <button type="submit" class="btn btn-danger">BEP[<span class="lab-title">lab</span>] vous recontacte!</button>
+							  <button type="submit" class="btn btn-danger center-block">BEP[<span class="lab-title">lab</span>] vous recontacte!</button>
 							</form>
+						-->
 
 			    		</article>
 			    </div>
@@ -222,20 +305,54 @@
 
 	    		    
 	    <footer>
-			<article>
-				<h2>Featured</h2>
-				<p>Inscrivez-vous <strong><a href="test2.html">ici</a></strong> !</p>		
-				<button type="button" class="btn btn-primary">Je veux m'inscrire a la Newsletter !</button>
-
-			</article>
-			<h2 id="ancre">Contact</h2>
-
-			<i class="fa fa-facebook"></i>
-			<i class="fa fa-twitter"></i>
+			<ul class="list-inline center">
+		    	<li><a href="https://www.facebook.com/BEPlab" target="_blank"><i class="fa fa-facebook"></i></a> </li>
+				<li><i class="fa fa-twitter"></i></li>
+		    	<li><a href="http://beprestaurant.blogspot.com/" target="_blank"><span class="bep-title">BẾP</span></a>BRKLYN</li>
+		   	</ul>
+		   	<p>
+		   		© Copyright <span class="bold">BẾP</span>[lab], tous droits réservés.
+		   	</p>
 		</footer>
 
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+	<!-- Modal displayed when a user clicks on the upper button -->
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		  <div class="modal-dialog">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+		        <h4 class="modal-title" id="myModalLabel">Qu'est-ce que <span class="bep-title">BẾP</span>x ?</h4>
+		      </div>
+		      <div class="modal-body">
+		        <p>
+		        	<span class="italic red">"Bếp"</span> signifie <span class="italic red">"cuisine"</span> en vietnamien - la langue du staff de <span class="bold">BẾP</span><span class="red">[<span class="lab-title">lab</span>]</span>. <a href="http://beprestaurant.blogspot.fr/" target="_blank"><span class="bep-title">BẾP</span></a> est aussi le nom du restaurant vietnamien du chef <span class="red">An Nguyễn Xuân</span> à Williamsburg, Brooklyn (New York).
+		    	</p>
+		    	<p>
+		    		<span class="bold">BẾP</span><span class="red">[<span class="lab-title">lab</span>]</span> est le laboratoire de préparation, de création et d'expérimentation du chef <span class="red">An Nguyễn Xuân</span> de <a href="http://beprestaurant.blogspot.fr/" title="BEP restaurant @simplecafe" target="_blank"><span class="bep-title">BẾP</span></a>BRKLYN pour tous ses évènements culinaires à Paris.
+		    	</p>
+		        <p>
+		        	Pionnier dans les pop up resto, resto a NYC, pionnier dans Smorgasburg market mondialement connu, featured dans NYtimes, New York Magazine, LA Times </br>
+		        	...dans bouquin Brooklyn Chef tables....tout ca c'est notre credibilite.
+		        </p>
+		        <p>
+		        	AN chef de Bep est parmi les "influenceur" sur la scene de la bouffe new yorkaise.....
+					On veut aussi jouer le role d'incumbateur dans la scene parisienne de la bouffe via le bep lab.
+				</p>
+		      </div>
+		      <div class="modal-footer">
+		        <a href="#emplacement" class="btn btn-danger" id="knowMore">Je veux en savoir plus!</a>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+
+	    <!-- Including Bootstrap JS (with its jQuery dependency) so that dynamic components work -->
+	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+	    <script type="text/javascript" src="global.js"></script>
+	</body>
+</html>
 	</body>
 
 </html>
